@@ -1,1 +1,4 @@
-h1 コンテンツを表示
+h1 テーマ一覧
+- @themes.each do |theme|
+  p = link_to theme.name, theme
+  p = link_to "編集する", edit_theme_path(theme)
