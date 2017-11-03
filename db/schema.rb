@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171102133352) do
+ActiveRecord::Schema.define(version: 20171103111133) do
 
   create_table "replacements", force: :cascade do |t|
     t.string "name", null: false
@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 20171102133352) do
     t.integer "theme_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["order", "theme_id"], name: "index_replacements_on_order_and_theme_id", unique: true
     t.index ["theme_id"], name: "index_replacements_on_theme_id"
   end
 
