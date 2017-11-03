@@ -5,7 +5,7 @@ class ThemesController < ApplicationController
 
   def show
     @theme = Theme.find(params[:id])
-    @replacements = @theme.replacements.order(:order)
+    @replacements = @theme.replacements.contents_order
   end
 
   def edit
