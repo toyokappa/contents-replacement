@@ -5,12 +5,11 @@ class ThemesController < ApplicationController
 
   def show
     @theme = Theme.find(params[:id])
-    @replacements = @theme.replacements.contents_order
+    @contents = @theme.contents.order("'orders'.'order'")
   end
 
   def edit
     @theme = Theme.find(params[:id])
-    @theme.replacements.build
   end
 
   def update
@@ -25,6 +24,6 @@ class ThemesController < ApplicationController
   private
 
     def theme_params
-      params.require(:theme).permit(:name, replacements_attributes: [:id, :name, :order, :_destroy])
+      params.require(:theme).permit(:name, orders_attributes: [:id, :name, :order, :_destroy])
     end
 end
