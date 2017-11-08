@@ -2,10 +2,4 @@
   ul
   - @theme.errors.full_messages.each do |error_msg|
     li = error_msg
-  = f.fields_for :replacements do |replacements_f|
-    p
-      = replacements_f.label :name
-      = replacements_f.text_field :name
-      = replacements_f.label :order
-      = replacements_f.number_field :order
   = f.submit
