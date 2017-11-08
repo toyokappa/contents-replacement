@@ -10,21 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171103111133) do
-
-  create_table "replacements", force: :cascade do |t|
-    t.string "name", null: false
-    t.integer "order", null: false
-    t.integer "theme_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["theme_id"], name: "index_replacements_on_theme_id"
-  end
+ActiveRecord::Schema.define(version: 20171108022215) do
 
   create_table "themes", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "contents_order"
   end
 
 end
