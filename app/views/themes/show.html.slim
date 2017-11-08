@@ -1,4 +1,4 @@
 h1 コンテンツの順序確認
-- @contents.each do |content|
-  = render "#{content.name}"
+- @theme.contents_order.each do |key, value|
+  = render "#{key}"
 p = link_to "戻る", root_path

@@ -1,8 +1,11 @@
 class Theme < ApplicationRecord
-  has_many :orders
-  has_many :contents, through: :orders
+  TOP_CONTENTS = {
+    content1: "コンテンツ1",
+    content2: "コンテンツ2",
+    content3: "コンテンツ3"
+  }
+  TOP_CONTENTS_DEFAULT_ORDER = TOP_CONTENTS.keys
 
-  accepts_nested_attributes_for :orders, allow_destroy: true, reject_if: :all_blank
-
+  serialize :contents_order, Hash
   validates :name, presence: true
 end

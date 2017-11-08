@@ -2,10 +2,9 @@
   ul
   - @theme.errors.full_messages.each do |error_msg|
     li = error_msg
-  = f.fields_for :orders do |orders_f|
+  - @theme.contents_order.each do |key, value|
     p
-      = orders_f.object.content.subject
-      | ：
-      = orders_f.label :order
-      = orders_f.number_field :order
+      = Theme::TOP_CONTENTS[key.to_sym]
+      | :
+      = f.number_field :contents_order, name: "theme[contents_order][#{key}]", value: value
   = f.submit
