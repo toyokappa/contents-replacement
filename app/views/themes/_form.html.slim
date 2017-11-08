@@ -2,4 +2,9 @@
   ul
   - @theme.errors.full_messages.each do |error_msg|
     li = error_msg
+  - @theme.contents_order.each do |key, value|
+    p
+      = Theme::TOP_CONTENTS[key.to_sym]
+      | :
+      = f.number_field :contents_order, name: "theme[contents_order][#{key}]", value: value
   = f.submit
